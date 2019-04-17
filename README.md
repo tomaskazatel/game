@@ -1,4 +1,4 @@
-# Erste happy game
+# Happy game
 
 ## Run
 
