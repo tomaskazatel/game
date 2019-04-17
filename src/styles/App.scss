@@ -1,0 +1,35 @@
+* {
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --dark-blue: #2980b9;
+    --light-blue: #3498db;
+    --white: #ffffff;
+}
+
+.cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 850px;
+    margin: auto;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title button {
+    margin-left: 20px;
+    background-color: var(--dark-blue);
+    border: 0;
+    color: var(--white);
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
