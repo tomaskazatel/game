@@ -3,7 +3,6 @@ import Shuffle from './utils/shuffle';
 export interface Item {
     key: number;
     value: string;
-    match: number;
 }
 
 class Store {
@@ -31,7 +30,6 @@ class Store {
                 this.preparedItems.push({
                     key: tempKey + increase,
                     value: jsItem,
-                    match: increase ? tempKey : tempKey + 1,
                 });
             });
         });

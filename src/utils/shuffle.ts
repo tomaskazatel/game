@@ -1,6 +1,4 @@
-import { Item } from '../store';
-
-export default (items: Item[]): Item[] => {
+export default (items: any): any => {
     if (items && items.length > 0) {
         let length: number = items.length - 1;
         while (length > 0) {

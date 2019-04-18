@@ -14,8 +14,7 @@ const App = React.memo(() => {
     const onCardClick = (item: Item): void => {
         changeClicks(clicks + 1);
         if (selected.length === 1) {
-            console.log('hello');
-            if (selected[0].key === item.match) {
+            if (selected[0].value === item.value) {
                 done.push(selected[0].key, item.key);
                 changeSelected([]);
             }
@@ -45,7 +44,9 @@ const App = React.memo(() => {
                 )}
             </div>
             <div className="title">
-                <p>Number of moves {Math.floor(clicks / 2)}</p>
+                <p>
+                    Number of moves <b>{Math.floor(clicks / 2)}</b>
+                </p>
             </div>
             <div className="cards">
                 {Store.items.map((item: Item) => (
