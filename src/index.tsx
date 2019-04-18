@@ -9,8 +9,10 @@ import './styles/App.scss';
 const App = React.memo(() => {
     const [done, resetDone] = useState<number[]>([]);
     const [selected, changeSelected] = useState<Item[]>([]);
+    const [clicks, changeClicks] = useState<number>(0);
 
     const onCardClick = (item: Item): void => {
+        changeClicks(clicks + 1);
         if (selected.length === 1) {
             console.log('hello');
             if (selected[0].key === item.match) {
@@ -24,6 +26,7 @@ const App = React.memo(() => {
     };
 
     const restart = (): void => {
+        changeClicks(0);
         resetDone([]);
         changeSelected([]);
         Store.restart();
@@ -40,6 +43,9 @@ const App = React.memo(() => {
                 ) : (
                     <Title>Guessed: {done.length / 2}</Title>
                 )}
+            </div>
+            <div className="title">
+                <p>Number of moves {Math.floor(clicks / 2)}</p>
             </div>
             <div className="cards">
                 {Store.items.map((item: Item) => (
